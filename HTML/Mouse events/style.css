@@ -1,0 +1,47 @@
+#right{
+	background-color:rgb(117, 177, 201);
+	border: 1px solid black;
+	height: 400px;
+	width: 400px;
+	}
+#ala{
+	background-color:rgb(117, 177, 201);
+
+}
+#geo{
+	background-color:rgb(117, 177, 201);
+
+}
+.menu-context {
+    position: absolute;
+    left:-9999px;
+    top:-9999px;
+    background: rgb(48, 48, 48);
+    color:rgb(255, 255, 255);
+    list-style:none;
+    padding:0;
+    margin:0;
+    width:300px;
+    padding:10px;
+    border-radius: 4px;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size:13px;
+}
+.menu-context li {
+    border-bottom:1px solid rgb(156, 156, 156);
+    cursor: pointer;
+}
+.menu-context li a {
+    color:#fff;
+    text-decoration: none;
+    padding:5px 10px;
+    display: block;
+    transition:0.5s all;
+}
+.menu-context li a:hover {
+    background: #F15C6C;
+    color:#fff;
+}
+.menu-context li:last-child {
+    border:0;
+}

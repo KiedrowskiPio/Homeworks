@@ -1,0 +1,52 @@
+<html>
+<head>
+	<style type="text/css">
+	#mapa { height: 600px; }
+	</style>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+ <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+	<div id="mapa"></div>
+
+	<script type="text/javascript">
+		var mymap = L.map('mapa').setView([54.44476626637, 18.55573654174], 29);
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 16,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			id: 'mapbox.streets'
+		}).addTo(mymap);
+
+        L.marker([54.44257642972012, 18.555800914764408]).addTo(mymap)
+		.bindPopup("Wydział Zarządzania UG");
+
+		L.marker([54.445090676663995, 18.553547859191898]).addTo(mymap)
+		.bindPopup("Centrum Dydaktyczne UG");		
+
+		L.marker([54.44510315393139, 18.554867506027225]).addTo(mymap)
+		.bindPopup("Wydział Ekonomiczny UG");
+
+		L.circle([54.44483489184433, 18.55721712112427], 46, {
+			color: 'blue',
+			fillColor: '#00FFFF',
+			fillOpacity: 0.3
+		}).addTo(mymap).bindPopup("Komenda");
+
+		L.polygon([
+			[54.4453560213, 18.5529131311],
+			[54.4453781232, 18.5531041212],
+			[54.4450753211, 18.5531851121],
+			[54.4450534241, 18.5530085231]
+		]).addTo(mymap).bindPopup("Parking dla nauczycieli");
+
+			L.polygon([
+			[54.4450354321, 18.5529112311],
+			[54.4453991131, 18.5527232212],
+			[54.4453844232, 18.5524612232],
+			[54.4449913321, 18.5525461131]]
+		).addTo(mymap).bindPopup("Parking dla uczniów");
+
+		var popup = L.popup();
+	</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="getLocation()">Pobierz</button>
+
+<p id="x"></p>
+
+<script>
+var x = document.getElementById("x");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolokacja jest niekompatybilna z tą przeglądarką";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Szerokość geograficzna: " + position.coords.latitude + 
+  "<br>Długość geograficzna " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
